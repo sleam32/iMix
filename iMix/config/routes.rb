@@ -1,4 +1,8 @@
 IMix::Application.routes.draw do
+ root to: "ingredients#index"
+
+
+ resources :ingredients, only: [:index, :new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

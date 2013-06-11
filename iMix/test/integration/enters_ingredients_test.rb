@@ -8,11 +8,10 @@ class EntersIngredientsTest < ActionDispatch::IntegrationTest
 
 
     assert_equal 3, Ingredient.count
-    visit '/ingredients'
     assert_include page.body, "Drunko_Dex"
     assert_include page.body, "Jack Daniels"
     assert_include page.body, "Crown Royal"
-    assert_include page.body, "Basil Hayden"
+    assert_include body, "Basil Hayden"
 
   end
 end
