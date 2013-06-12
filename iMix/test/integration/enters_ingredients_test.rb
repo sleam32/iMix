@@ -12,5 +12,11 @@ class EntersIngredientsTest < ActionDispatch::IntegrationTest
     assert_include page.body, "Jack Daniels"
     assert_include page.body, "Crown Royal"
     assert_include page.body, "Basil Hayden"
+end
+
+  def test_enters_ingredient_ignores_duplicate_names
+    Ingredient.create(name: 'foo')
+    first_ingredient_count = Ingredient.count
+    assert_equal first_ingredient_count, Ingredient.count
   end
 end
