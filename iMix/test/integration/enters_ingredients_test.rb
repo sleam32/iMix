@@ -8,7 +8,7 @@ class EntersIngredientsTest < ActionDispatch::IntegrationTest
 
     assert_equal 3, Ingredient.count
     visit '/'
-    assert_include page.body, "IMix"
+    assert_include page.body, "iMix"
     assert_include page.body, "Jack Daniels"
     assert_include page.body, "Crown Royal"
     assert_include page.body, "Basil Hayden"
