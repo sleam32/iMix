@@ -1,14 +1,19 @@
 <!DOCTYPE html>
+<!-- This is where you add features that will be constant throughout your application ie navbars -->
 <html>
 <head>
-  <title>IMix</title>
+  <title>iMix</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <% flash.each do |type, message| %>
+  <%= message %>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

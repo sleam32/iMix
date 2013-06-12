@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-IMix::Application.config.secret_token = '5e2ecf9647980b275b01ebdcb96f5dcd4d03e3c02c8a9184a2c3fbda4bffbfe47f2748b051957afc80c7361e55a00331725833c1183fad7e24e6dee5769125a1'
+IMix::Application.config.secret_token = '817b78d4603834752c63c43d8918e087cd64b22028e6c6f2dcfa3780be5dae0ef4fbbf6a8d958b6a59371b0dd71ffa4e672dc7a69b7fa314f30b269c07ae5edf'
