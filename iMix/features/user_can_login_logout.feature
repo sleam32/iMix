@@ -9,7 +9,8 @@ When I got the homepage
 And I click "Log In"
 And I fill in "bob@example.com" for "Email"
 And I fill in "password1" for "Password"
-And I press "Log In"
+And I open the page
+And I press "Sign in"
 Then I should see "You are now logged in."
 And I should not see "Log In"
 
@@ -19,7 +20,7 @@ When I got the homepage
 And I click "Log In"
 And I fill in "bob@example.com" for "Email"
 And I fill in "wrong password" for "Password"
-And I press "Log In"
+And I press "Sign in"
 Then I should see "Your username or password is incorrect. Please try again."
 
 
@@ -29,5 +30,5 @@ When I got the homepage
 And I click "Log In"
 And I fill in "bob@example.com" for "Email"
 And I fill in "wrong username" for "Username"
-And I press "Log In"
+And I press "Sign in"
 Then I should see "Your username or password is incorrect. Please try again."
