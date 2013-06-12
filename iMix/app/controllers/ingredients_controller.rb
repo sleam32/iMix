@@ -14,4 +14,8 @@ class IngredientsController < ApplicationController
     redirect_to :root
   end
 
+  def update!
+    @ingredient = Ingredient.update
+  end
+
 end
