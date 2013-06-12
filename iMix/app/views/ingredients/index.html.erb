@@ -1,0 +1,10 @@
+<h1>IMix</h1>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+  <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add An Ingredient", new_ingredient_path %>
+
+

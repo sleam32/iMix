@@ -6,12 +6,11 @@ class EntersIngredientsTest < ActionDispatch::IntegrationTest
     Ingredient.create!(name: "Crown Royal")
     Ingredient.create!(name: "Basil Hayden")
 
-
     assert_equal 3, Ingredient.count
-    assert_include page.body, "Drunko_Dex"
+    visit '/'
+    assert_include page.body, "IMix"
     assert_include page.body, "Jack Daniels"
     assert_include page.body, "Crown Royal"
-    assert_include body, "Basil Hayden"
-
+    assert_include page.body, "Basil Hayden"
   end
 end
