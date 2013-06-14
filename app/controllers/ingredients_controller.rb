@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.create( params[:ingredient] )
     flash[:notice] = "Your ingredient has now been added!"
-    redirect_to :root
+    # redirect_to :root
   end
 
   def update!

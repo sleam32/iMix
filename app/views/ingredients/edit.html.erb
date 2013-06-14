@@ -1,14 +1,11 @@
-<h1>iMix</h1>
-<h2><%= drink_name.name %></h2>
+<h2>Edit Ingredients</h2>
 <%= form_for @ingredient do |f| %>
-<%= f.label :name, "Add Ingredients" %>
+<%= f.label :name, "Add" %>
 <%= f.text_field :name %>
 <%= f.text_field :name %>
 <%= f.text_field :name %>
 <%= f.text_field :name %>
 <%= f.text_field :name %>
 <%= f.text_field :name %>
-<%= f.submit "Submit Ingredients" %> <!-- on click, should link to ingredients show -->
+<%= f.submit "Submit" %>
 <% end %>
-
-
