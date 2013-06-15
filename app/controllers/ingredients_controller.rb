@@ -10,8 +10,11 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.create( params[:ingredient] )
+    # if @ingredient.save
+    #   RecipeIngredient.create(recipe_id: Recipe.last.id, ingredient_id: Ingredient.last.id)
+    # end
     flash[:notice] = "Your ingredient has now been added!"
-    # redirect_to :root
+    redirect_to :action => "new"
   end
 
   def update!

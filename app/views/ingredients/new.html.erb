@@ -2,11 +2,8 @@
 <%= form_for @ingredient do |f| %>
 <%= f.label :name, "Add" %>
 <%= f.text_field :name %>
-<%= f.text_field :name %>
-<%= f.text_field :name %>
-<%= f.text_field :name %>
-<%= f.text_field :name %>
-<%= f.text_field :name %>
 <%= f.submit "Submit" %>
 <% end %>
+
+<%= link_to "Save", recipe_path(Recipe.last.id) %>
 
