@@ -6,13 +6,12 @@ class RecipesController < ApplicationController
 
   def new
     @recipes = Recipe.all
-
   end
 
   def create
     @recipe = Recipe.create( params[:recipe] )
     flash[:notice] = "#{@recipe.drink_name} Created!"
-    redirect_to new_ingredient_url
+    redirect_to new_ingredient_url(@recipe)
   end
 
   def update
@@ -25,11 +24,16 @@ class RecipesController < ApplicationController
   end
 
   def show
+    Rails.logger.info params
     @recipe = Recipe.find( params[:id])
+    Rails.logger.info @recipe
+    Rails.logger.info Ingredient.pluck(:recipe_id).uniq
+    @ingredients = Ingredient.where(recipe_id: @recipe.id).all
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @ingredients = Ingredient.all
   end
 
   def destroy

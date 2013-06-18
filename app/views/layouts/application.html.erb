@@ -2,10 +2,19 @@
 <!-- This is where you add features that will be constant throughout your application ie navbars -->
 <html>
 <head>
-  <title>iMix</title>
+<title>iMix</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "iMix", :root, :class => "brand pull-left" %>
+        <div id="user_nav" class="pull-right">
+        </div>
+      </div>
+    </div>
+  </div>
 </head>
 <body>
 

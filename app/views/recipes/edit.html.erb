@@ -9,4 +9,10 @@
 <%= f.submit "Submit" %>
 <% end %>
 
+<ul>
+  <% @ingredients.each do |ingredient| %>
+  <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
 <%= link_to "Save", recipe_path(Recipe.last.id) %>

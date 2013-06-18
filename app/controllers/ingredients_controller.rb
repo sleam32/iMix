@@ -11,6 +11,7 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.create( params[:ingredient] )
+    @ingredient.recipe_id = params[:recipe][:id]
     flash[:notice] = "#{@ingredient.name} Mixed!"
     redirect_to :action => "new"
   end

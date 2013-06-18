@@ -4,8 +4,9 @@
 <%= @recipe.drink_name %>
 <%= @recipe.user_name %>
 <%= @recipe.state %>
-<ul><% @recipe.ingredients.each do |ingredient| %>
-  <li><%= Ingredient.all %></li>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+  <li><%= ingredient.name %></li>
   <% end %>
 </ul>
 
