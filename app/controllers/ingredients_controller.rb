@@ -6,19 +6,33 @@ class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new
+    @ingredients = Ingredient.all
   end
 
   def create
     @ingredient = Ingredient.create( params[:ingredient] )
-    # if @ingredient.save
-    #   RecipeIngredient.create(recipe_id: Recipe.last.id, ingredient_id: Ingredient.last.id)
-    # end
-    flash[:notice] = "Your ingredient has now been added!"
+    flash[:notice] = "#{@ingredient.name} Mixed!"
     redirect_to :action => "new"
   end
 
   def update!
     @ingredient = Ingredient.update
   end
+
+  def show
+    @ingredient = Ingredient.find(params[:id])
+  end
+
+  def edit
+    @ingredient = Ingredient.find(params[:id])
+    redirect_to edit_ingredient_path
+  end
+
+  def destroy
+    @ingredient = Ingredient.find( params[:id] )
+    @ingredient.destroy
+    redirect_to :root
+  end
+
 
 end

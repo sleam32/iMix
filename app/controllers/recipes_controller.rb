@@ -1,25 +1,41 @@
 class RecipesController < ApplicationController
+
   def index
-    @recipes = Recipe.all
+    @recipe = Recipe.new
   end
 
   def new
-    @recipe = Recipe.new
+    @recipes = Recipe.all
+
   end
 
   def create
     @recipe = Recipe.create( params[:recipe] )
-    flash[:notice] = "Added!"
+    flash[:notice] = "#{@recipe.drink_name} Created!"
     redirect_to new_ingredient_url
   end
 
-  def update!
-    @drink_name = Drink_Name.update
-    @user_name = User_Name.update
-    @state = State.update
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update_attributes(params[:recipe])
+      redirect_to recipe_path
+    else
+      render 'edit'
+    end
   end
 
   def show
     @recipe = Recipe.find( params[:id])
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def destroy
+    @recipe = Recipe.find( params[:id] )
+    @recipe.destroy
+    redirect_to :root
+  end
+
 end

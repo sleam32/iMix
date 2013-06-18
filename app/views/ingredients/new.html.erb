@@ -1,9 +1,21 @@
-<h2>Add a New Ingredient</h2>
+<h2>iMix</h2>
+<p>Awesome! What's in this thing?!</p>
 <%= form_for @ingredient do |f| %>
 <%= f.label :name, "Add" %>
 <%= f.text_field :name %>
 <%= f.submit "Submit" %>
 <% end %>
 
-<%= link_to "Save", recipe_path(Recipe.last.id) %>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+  <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
+
+<p>Great. Sound delicious yet? Sure it does!</p>
+
+
+<%= link_to "Save and Pray", recipe_path(Recipe.last.id) %>
+
 

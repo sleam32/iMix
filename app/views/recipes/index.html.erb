@@ -1,11 +1,13 @@
-<h1>iMix</h1>
-
-
-
-<% @recipes.each do |recipe| %>
-  <%= link_to recipe.drink_name, recipe_path(recipe) %>
+<h1>Get iMixed!</h1>
+<h2>What'll it be?</h2>
+<%= form_for @recipe do |f| %>
+<%= f.label :drink_name, "Give your drink a nickname" %>
+<%= f.text_field :drink_name %>
+<%= f.label :user_name, "Add your first and last name" %>
+<%= f.text_field :user_name %>
+<%= f.label :state, "Add the name of your state" %>
+<%= f.text_field :state %>
+<%= f.submit "Submit" %>
 <% end %>
-
-<%= link_to "Add recipe", new_recipe_path %>
 
 

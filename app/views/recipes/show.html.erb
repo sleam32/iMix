@@ -1,7 +1,13 @@
+<h2>Almost Done!</h2>
+<p>Hand this off to your bartender...wait...and taste the magic...</p>
+
 <%= @recipe.drink_name %>
 <%= @recipe.user_name %>
 <%= @recipe.state %>
 <ul><% @recipe.ingredients.each do |ingredient| %>
-  <li><%= ingredient.name %></li>
+  <li><%= Ingredient.all %></li>
   <% end %>
 </ul>
+
+<%= link_to "You've Been iMixed!", :root %>
+<%= link_to "Edit", edit_recipe_path(Recipe.last.id) %>

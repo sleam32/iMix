@@ -1,11 +1,12 @@
-<h1>iMix</h1>
-<h2>Edit</h2>
+<h2>iMix</h2>
+<p>Forget something?</p>
 <%= form_for @recipe do |f| %>
-<%= f.label :name, "Give your drink a nickname" %>
-<%= f.text_field :name %>
-<%= f.label :name, "Add your first and last name" %>
-<%= f.text_field :name %>
-<%= f.label :name, "Add the name of your state" %>
-<%= f.text_field :name %>
-<%= f.submit "Submit" %> <!-- on click, should link to ingredients index -->
+<%= f.label :drink_name, "Keep em Comin!" %>
+<%= f.text_field :drink_name %>
+<%= f.submit "Submit" %>
+<%= f.label :drink_name, "Kill it with FIRE!" %>
+<%= f.text_field :drink_name %>
+<%= f.submit "Submit" %>
 <% end %>
+
+<%= link_to "Save", recipe_path(Recipe.last.id) %>
