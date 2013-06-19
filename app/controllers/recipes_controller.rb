@@ -11,12 +11,13 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.create( params[:recipe] )
     flash[:notice] = "#{@recipe.drink_name} Created!"
-    redirect_to new_ingredient_url(@recipe)
+    redirect_to recipe_path(@recipe)
   end
 
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update_attributes(params[:recipe])
+      flash[:notice] = "#{@recipe.drink_name} Mixed!"
       redirect_to recipe_path
     else
       render 'edit'
@@ -24,13 +25,20 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find( params[:id])
-    @ingredients = Ingredient.where(recipe_id: @recipe.id).all
+    @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @ingredients = Ingredient.all
+    @ingredients = @recipe.ingredients
+  end
+
+  def add_ingredient
+    @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.find(params[:ingredient_id])
+    @recipe.ingredients << @ingredient
+    redirect_to recipe_path
   end
 
   def destroy

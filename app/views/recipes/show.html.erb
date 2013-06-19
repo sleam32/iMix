@@ -1,12 +1,19 @@
 <h2>Almost Done!</h2>
+<p>Select your ingredients...</p>
 <p>Hand this off to your bartender...wait...and taste the magic...</p>
 
 <%= @recipe.drink_name %>
 <%= @recipe.user_name %>
 <%= @recipe.state %>
+
+<%= form_for @recipe do |f| %>
+<%= f.select(:drink_name, [['Vodka'], ['Whiskey'], ['Rum']]) %>
+<%= f.submit "Submit" %>
+<% end %>
+
 <ul>
-  <% @ingredients.each do |ingredient| %>
-  <li><%= ingredient.name %></li>
+  <% @recipe.ingredients.each do |ingredient| %>
+  <li><%= ingredient.drink_name %></li>
   <% end %>
 </ul>
 

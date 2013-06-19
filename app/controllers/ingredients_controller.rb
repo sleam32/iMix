@@ -5,15 +5,18 @@ class IngredientsController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.find(params[:recipe_id])
     @ingredient = Ingredient.new
     @ingredients = Ingredient.all
   end
 
   def create
-    @ingredient = Ingredient.create( params[:ingredient] )
-    @ingredient.recipe_id = params[:recipe][:id]
-    flash[:notice] = "#{@ingredient.name} Mixed!"
-    redirect_to :action => "new"
+    @ingredient = Ingredient.create(params[:ingredient])
+      if ingredient.save
+        flash[:notice] = "#{@ingredient.name} Mixed!" if Ingredient.last == @ingredient
+        redirect_to root_path
+      end
+    end
   end
 
   def update!

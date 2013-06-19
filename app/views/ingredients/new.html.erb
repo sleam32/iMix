@@ -1,10 +1,11 @@
 <h2>iMix</h2>
 <p>Awesome! What's in this thing?!</p>
-<%= form_for @ingredient do |f| %>
-<%= f.label :name, "Add" %>
-<%= f.text_field :name %>
+<%= form_for @recipe do |f| %>
+<%= f.label :drink_name, "Add" %>
+<%= f.text_field :drink_name %>
 <%= f.submit "Submit" %>
 <% end %>
+
 
 <ul>
   <% @ingredients.each do |ingredient| %>

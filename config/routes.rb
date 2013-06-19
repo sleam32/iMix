@@ -1,8 +1,12 @@
 IMix::Application.routes.draw do
   root to: "recipes#index"
 
-  resources :recipes
-  resources :ingredients
+  resources :recipes do
+    member do
+      post :add_ingredient
+    end
+    resources :ingredients
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
