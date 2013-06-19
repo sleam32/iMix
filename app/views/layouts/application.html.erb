@@ -1,28 +1,46 @@
-<!DOCTYPE html>
-<!-- This is where you add features that will be constant throughout your application ie navbars -->
+<!doctype html>
 <html>
-<head>
-<title>iMix</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <div class="navbar navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <%= link_to "iMix", :root, :class => "brand pull-left" %>
-        <div id="user_nav" class="pull-right">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "iMix" %></title>
+    <meta name="Cocktail Generator" content="">
+    <meta name="Shearry Malone" content="">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
         </div>
-      </div>
-    </div>
-  </div>
-</head>
-<body>
-
-  <% flash.each do |type, message| %>
-  <%= message %>
-  <% end %>
-
-  <%= yield %>
-
-</body>
+      </nav>
+    </header>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  </body>
 </html>
