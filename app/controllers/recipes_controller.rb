@@ -24,10 +24,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    Rails.logger.info params
     @recipe = Recipe.find( params[:id])
-    Rails.logger.info @recipe
-    Rails.logger.info Ingredient.pluck(:recipe_id).uniq
     @ingredients = Ingredient.where(recipe_id: @recipe.id).all
   end
 
