@@ -13,9 +13,11 @@
 
 <ul>
   <% @recipe.ingredients.each do |ingredient| %>
-  <li><%= ingredient.drink_name %></li>
+  <li><%= ingredient.name %></li>
   <% end %>
 </ul>
 
 <%= link_to "You've Been iMixed!", :root %>
 <%= link_to "Edit", edit_recipe_path(Recipe.last.id) %>
+
+

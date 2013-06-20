@@ -17,6 +17,7 @@ group :assets do
   gem "less-rails"
   gem 'twitter-bootstrap-rails'
   gem 'therubyracer'
+  gem 'bootstrap-sass', '2.1'
 
 
 
