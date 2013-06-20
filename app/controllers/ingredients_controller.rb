@@ -14,7 +14,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.create(params[:ingredient])
       if ingredient.save
         flash[:notice] = "#{@ingredient.name} Mixed!" if Ingredient.last == @ingredient
-        redirect_to root_path
+        redirect_to :root
       end
     end
   end
