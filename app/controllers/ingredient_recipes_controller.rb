@@ -1,6 +1,8 @@
 class IngredientRecipesController < ApplicationController
+
   def new
-    @ingredient_recipe = Ingredient.new
+    @ingredient_recipe = IngredientRecipe.new
+    @ingredients = Ingredients.all
   end
 
   def destroy
