@@ -1,13 +1,46 @@
-<h1>Get iMixed!</h1>
-<h2>What'll it be?</h2>
-<%= form_for @recipe do |f| %>
-<%= f.label :drink_name, "Give your drink a nickname" %>
-<%= f.text_field :drink_name %>
-<%= f.label :user_name, "Add your first and last name" %>
-<%= f.text_field :user_name %>
-<%= f.label :state, "Add the name of your state" %>
-<%= f.text_field :state %>
-<%= f.submit "Submit" %>
-<% end %>
+<header class="navbar navbar-fixed-top">
+  <ul class="nav">
+    <li class="active">
+      <a href="/">Home</a>
+    </li>
+    <li><a href="#">About iMix</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <nav class="navbar-inner">
+    <div class="container">
+
+      <div id="search_bar">
+        <%= form_tag new_recipe_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+        <% end %>
+      </div>
+    </header>
+  </nav>
+
+  <div class="slogan">
+    <p>"because no great story ever started with someone eating a salad..."</p>
+  </div>
+
+  <h1>iMix.</h1>
+<!--   <h3>What'll it be?</h3>
+-->
+<div id="recipe_form">
+  <%= form_for @recipe do |f| %>
+  <div class="small-label"> <%= f.label :drink_name, "Give your drink a nickname" %></div>
+  <%= f.text_field :drink_name %>
+  <div class="small-label2> <%= f.label :user_name, "Add your first and last name" %></div>
+  <%= f.text_field :user_name %>
+</div>
+
+<div id="state_submit">
+  <div class="small-label3> <%= f.label :state, "Add the name of your state" %></div>
+  <%= f.text_field :state %>
+  <%= f.submit "Submit" %>
+  <% end %>
+</div>
 
 

@@ -1,28 +1,61 @@
-<h2>Almost Done!</h2>
+<header class="navbar navbar-fixed-top">
+  <ul class="nav">
+    <li class="active">
+      <%= link_to "Home", :root %>
+    </li>
+    <li><a href="#">About iMix</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <nav class="navbar-inner">
+    <div class="container">
+      <div id="search_bar">
+        <%= form_tag new_recipe_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+        <% end %>
+      </div>
+    </header>
+  </nav>
+</div>
+
+<div class="almost-done">
+  <h2>Almost Done!</h2>
+</div>
 <p>Select your ingredients...</p>
 <p>Hand this off to your bartender...wait...and taste the magic...</p>
 
+<div id="list-info">
+  <ul>
+    <li><%= @recipe.drink_name %></li>
+    <li><%= @recipe.user_name %></li>
+    <li><%= @recipe.state %></li>
+  </ul>
+</div>
 
-<ul>
-  <li><%= @recipe.drink_name %></li>
-  <li><%= @recipe.user_name %></li>
-  <li><%= @recipe.state %></li>
-</ul>
-
-<%= form_for @recipe do |f| %>
-<%= f.collection_select(:ingredients, @allIngredients, :id, :name ) %>
-<%= f.submit "Submit" %>
-<% end %>
-
-<ul>
-  <% @recipe.ingredients.each do |ingredient| %>
-  <li><%= ingredient.name %></li>
+<div id="dropdown">
+  <%= form_for @recipe do |f| %>
+  <%= f.collection_select(:ingredients, @allIngredients, :id, :name ) %>
+  <%= f.submit "Submit" %>
   <% end %>
-</ul>
+</div>
 
+<div id="ingredients">
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %> <%= link_to 'x', :method => :destroy %></li>
+    <% end %>
+  </ul>
+</div>
 
-<%= link_to "You've Been iMixed!", :root %>
-<%= link_to "Edit", edit_recipe_path(Recipe.last.id) %>
+<div id="button">
+  <%= button_to "You've Been iMixed!", :root %>
+</div>
 
+<div class="slogan2">
+  <p>"because alcohol SUCKS...said noone...EVER!"</p>
+</div>
 
 

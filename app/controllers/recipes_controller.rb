@@ -5,7 +5,11 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipes = Recipe.all
+    if params[:search].blank?
+      @recipes = Recipe.all
+    else
+      @recipes = Recipe.search_by(params[:search])
+    end
   end
 
   def create
@@ -18,14 +22,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredient = Ingredient.find(params[:recipe][:ingredients])
     @recipe.ingredients << @ingredient
-    # if @recipe.create
-    #   flash[:notice] = "#{@recipe.drink_name} Mixed!"
-    #   redirect_to recipe_path
-    # else
-    #   render 'edit'
-    # end
     redirect_to recipe_path(@recipe)
-
   end
 
   def show
@@ -47,9 +44,12 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = Recipe.find( params[:id] )
-    @recipe.destroy
-    redirect_to :root
+    matching_recipes = Recipe.where(user_name: params[:recipes]).all
+    matching_recipes.each do |recipe|
+      recipe.destroy
+    end
+    flash[:notice] = "Successfully Deleted!"
+    redirect_to :action => 'index'
   end
-
 end
+

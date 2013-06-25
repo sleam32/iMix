@@ -9,5 +9,73 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
- */
+ *= require_tree .*/
+
+
+ h1{
+  padding-bottom: 50px;
+font-family: 'Sacramento', cursive;
+}
+
+h2{
+  padding-top: 50px;
+}
+
+h3{
+  padding-top: 10px;
+}
+
+p{
+  text-align: center;
+  color: black;
+}
+
+#search_bar{
+  float: right;
+  padding-top: 20px;
+}
+
+#dropdown{
+  text-align: center;
+  padding-top: 20px;
+}
+
+#ingredients{
+  text-align: center;
+}
+
+#button{
+  text-align: center;
+  padding-top: 40px;
+}
+
+.slogan{
+  padding-right: 150px;
+}
+
+#state_submit{
+  font-family: Shadows Into Light, cursive;
+}
+
+.container{
+  color: white;
+}
+
+.content{
+  background: url("/assets/martini-glasses.jpg");
+}
+
+.small-label{
+  color: black;
+}
+
+.table{
+  color: black;
+  margin-left: 30px;
+}
+
+.almost-done{
+text-align: center;
+color: black;
+}
+

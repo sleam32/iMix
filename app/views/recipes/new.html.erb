@@ -1,7 +1,32 @@
-<h1>iMix</h1>
+<!-- <h3>Recipes</h3> -->
+<header class="navbar navbar-fixed-top">
+  <ul class="nav">
+    <li class="active">
+     <%= link_to "Home", :root %>
+   </li>
+   <li><a href="#">About iMix</a></li>
+   <li><a href="#">Blog</a></li>
+   <li><a href="#">Contact</a></li>
+ </ul>
+ <nav class="navbar-inner">
+  <div class="container">
+    <div id="slogan2">
+    </header>
+  </nav>
+</div>
 
-<% @recipes.each do |recipe| %>
-<%= link_to recipe.drink_name, recipe_path(recipe) %>
-<% end %>
 
-<%= link_to "Add Recipe", new_recipe_path %>
+<table class="table table-striped">
+
+  <% @recipes.each do |recipe| %>
+  <tr>
+    <td><%= recipe.user_name %></td>
+    <td><%= recipe.drink_name %></td>
+    <td><%= recipe.state %></td>
+    <td><%= recipe.ingredients_list %></td>
+    <td><%= button_to "Delete", recipe, :method=>:delete, :class=>:destroy %></td>
+  </tr>
+  <% end %>
+
+</table>
+

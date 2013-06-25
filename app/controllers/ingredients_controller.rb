@@ -11,16 +11,17 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.create(params[:ingredient])
-      if ingredient.save
-        flash[:notice] = "#{@ingredient.name} Mixed!" if Ingredient.last == @ingredient
-        redirect_to :root
-      end
-    end
+    @ingredient = Ingredient.create( params[:ingredient] )
+    flash[:notice] = "#{@IngredientsRecipe.name} Mixed!"
+    redirect_to :root(@ingredient)
+    @IngredientsRecipe.save
   end
 
-  def update!
-    @ingredient = Ingredient.update
+  def update
+    @ingredient = Ingredient.find(params[:id])
+    @recipe = Recipe.find(params[:ingredients][:recipe])
+    @ingredient.recipes << @recipe
+    redirect_to recipe_path(@ingredient)
   end
 
   def show
@@ -33,9 +34,11 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
-    @ingredient = Ingredient.find( params[:id] )
-    @ingredient.destroy
-    redirect_to :root
+    # @ingredient = Ingredient.find( params[:id] )
+    # @ingredient.destroy
+    # redirect_to :root
+    Ingredient.destroy_all("id IN ?", params[:ingredients])
+    redirect_to :action =>
   end
 
 
