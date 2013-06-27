@@ -26,21 +26,19 @@
   </div>
 
   <h1>iMix.</h1>
-<!--   <h3>What'll it be?</h3>
--->
-<div id="recipe_form">
-  <%= form_for @recipe do |f| %>
-  <div class="small-label"> <%= f.label :drink_name, "Give your drink a nickname" %></div>
-  <%= f.text_field :drink_name %>
-  <div class="small-label2> <%= f.label :user_name, "Add your first and last name" %></div>
-  <%= f.text_field :user_name %>
-</div>
+  <div id="recipe_form">
+    <%= form_for @recipe do |f| %>
+    <div class="small-label"> <%= f.label :drink_name, "Give your drink a nickname" %></div>
+    <%= f.text_field :drink_name %>
+    <div class="small-label2> <%= f.label :user_name, "Add your first and last name" %></div>
+    <%= f.text_field :user_name %>
+  </div>
 
-<div id="state_submit">
-  <div class="small-label3> <%= f.label :state, "Add the name of your state" %></div>
-  <%= f.text_field :state %>
-  <%= f.submit "Submit" %>
-  <% end %>
-</div>
+  <div id="state_submit">
+    <div class="small-label3> <%= f.label :state, "Add the name of your state" %></div>
+    <%= f.text_field :state %>
+    <%= f.submit "Submit" %>
+    <% end %>
+  </div>
 
 
