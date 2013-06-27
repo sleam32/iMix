@@ -9,59 +9,65 @@ font-family: 'Sacramento', cursive;
 }
 
 h2, h3{
-font-size: 60px;
-font-family: Shadows Into Light, cursive;
+font-size: 80px;
 }
-
 
 p{
 font-size: 28px;
 font-family: Shadows Into Light, cursive;
-text-align: center;
+padding-left: 30px;
+color: black;
 }
 
 #ingredients{
 font-size: 20px;
 font-weight: bold;
 font-family: Shadows Into Light, cursive;
-color: black;
+color: white;
+}
+
+#ingredients li{
+line-height: 20px;
+}
+
+#ingredients ul{
+padding-left: 70px;
 }
 
 #search_bar{
-  float: right;
-  padding-top: 20px;
-}
-
-#recipe_form{
-font-family: Shadows Into Light, cursive;
-padding-left: 480px;
+float: right;
 padding-top: 20px;
-color: black;
-}
-
-.slogan{
-position: absolute;
-padding-top: 200px;
-color: black;
-top: 80px;
-font-size: 40px;
-font-weight: bold;
-padding-left: 180px;
 }
 
 .slogan2 p{
-color: #585858;
+color: white;
 padding-right: 650px;
-margin-top: 120px;
 }
 
 #brand_link{
 padding-top: 20px;
 }
 
+.slogan{
+position: absolute;
+padding-top: 190px;
+color: black;
+top: 80px;
+font-size: 40px;
+font-weight: bold;
+padding-left: 150px;
+}
+
+#recipe_form{
+font-family: Shadows Into Light, cursive;
+padding-left: 355px;
+padding-top: 20px;
+color: black;
+}
+
 #state_submit{
 font-family: Shadows Into Light, cursive;
-padding-left: 480px;
+padding-left: 355px;
 color: black;
 }
 
@@ -72,35 +78,61 @@ color: white;
 .content{
 background: url("/assets/martini-glasses.jpg");
 padding-top: 30px;
-padding-bottom: 120px;
+padding-bottom: 150px;
 }
 
 #dropdown{
-  text-align: center;
-  padding-top: 20px;
+text-align: center;
+padding-right: 320px;
+margin-bottom: 20px;
+padding-top: -215px;
 }
 
-#button{
-  text-align: center;
-  padding-top: 40px;
+#save-link{
+text-align: center;
+float: left;
+padding-top: 60px;
+padding-left: 120px;
 }
-
 
 .almost-done{
 text-align: center;
-color: black;
+color: white;
+padding-top: 100px;
+text-shadow: 3px 3px black;
+font-family: Shadows Into Light, cursive;
 }
 
 
 #list-info{
 padding-top: 20px;
-padding-left: 120px;
+padding-left: 715px;
 font-family: Shadows Into Light, cursive;
-font-size: 18px;
+font-size: 20px;
+font-weight: bold;
 }
 
+#list-info li{
+line-height: 30px;
+}
 
+.row{
+margin-left: 0px;
+color: black;
+}
 
+#magic p{
+color: #CEECF5;
+text-shadow: 3px 3px black;
+}
+
+.navbar-inner{
+color: black;
+}
+
+#flash_notice{
+color: white;
+}
 
 
 

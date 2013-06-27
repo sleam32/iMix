@@ -14,7 +14,7 @@
 
  h1{
   padding-bottom: 50px;
-font-family: 'Sacramento', cursive;
+  font-family: 'Sacramento', cursive;
 }
 
 h2{
@@ -42,6 +42,10 @@ p{
 
 #ingredients{
   text-align: center;
+}
+
+#ingredients ul{
+  padding-left: 40px;
 }
 
 #button{
@@ -75,7 +79,19 @@ p{
 }
 
 .almost-done{
-text-align: center;
-color: black;
+  text-align: center;
+  color: black;
 }
 
+.row{
+  margin-left: 0px;
+  color: black;
+}
+
+#magic p{
+  color: white;
+}
+
+.navbar-inner{
+  color: black;
+}

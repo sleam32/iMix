@@ -1,8 +1,7 @@
-<!-- <h3>Recipes</h3> -->
 <header class="navbar navbar-fixed-top">
   <ul class="nav">
     <li class="active">
-     <%= link_to "Home", :root %>
+     <li><%= link_to "Home", :root %></li>
    </li>
    <li><a href="#">About iMix</a></li>
    <li><a href="#">Blog</a></li>
@@ -10,9 +9,16 @@
  </ul>
  <nav class="navbar-inner">
   <div class="container">
-    <div id="slogan2">
-    </header>
-  </nav>
+    <div id="search_bar">
+      <%= form_tag new_recipe_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+      <% end %>
+    </div>
+  </header>
+</nav>
 </div>
 
 
@@ -24,7 +30,6 @@
     <td><%= recipe.drink_name %></td>
     <td><%= recipe.state %></td>
     <td><%= recipe.ingredients_list %></td>
-    <td><%= button_to "Delete", recipe, :method=>:delete, :class=>:destroy %></td>
   </tr>
   <% end %>
 

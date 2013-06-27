@@ -8,7 +8,7 @@ class Recipe < ActiveRecord::Base
   end
 
   def ingredients_list
-    'Whiskey, Sour Mix, 2 Cherries'
+    'Ingredients.all?/each?/yeah....'
   end
 
 end

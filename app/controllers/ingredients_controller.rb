@@ -34,9 +34,6 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
-    # @ingredient = Ingredient.find( params[:id] )
-    # @ingredient.destroy
-    # redirect_to :root
     Ingredient.destroy_all("id IN ?", params[:ingredients])
     redirect_to :action =>
   end
